@@ -1,7 +1,6 @@
 'use strict';
 
 const secretNumber = Math.trunc(Math.random()*20) +1
-document.querySelector('.number').textContent = secretNumber
 let updateScore = 20
 
 document.querySelector('.check').addEventListener('click', function(){
@@ -12,6 +11,10 @@ document.querySelector('.check').addEventListener('click', function(){
     }
     else if(guess==secretNumber){
         document.querySelector('.message').textContent = "Correct Number!"
+        document.querySelector('.number').textContent = secretNumber
+        document.querySelector('body').style.backgroundColor = "#60b347"
+
+        document.querySelector('.number').style.width = "30rem"
     }
     else if(guess>secretNumber){
         if(updateScore>1)
